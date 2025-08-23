@@ -10,27 +10,31 @@
     
     <div class="container">
         
-        
-        <div class="header">
-            <h1>To Do List</h1>
-        </div>
+        <div class="list-container">
+            
+            <div class="header">
+                <h1>Task Tracker</h1>
+            </div>
 
         
-        <div class="task-input">
-            <input
-                type="text"
-                placeholder="Add Task"
-            />
+            <div class="task-input">
+                <input
+                    id="task-add"
+                    type="text"
+                    placeholder="Start writing and press enter to create task"
+                    required
+                />
         
-            <button id="input-button" onclick="addTask()">Add</button>
-        </div>
+                <button id="input-button" onclick="addTask()">Add</button>
+            </div>
 
-        <div class="tasks">
-            <h2>Task List</h2>
-            <p id="test"></p>
-            <ul id="task-box"></ul>
-        </div>
 
+            <div class="tasks">
+                <h2>Task List</h2>
+                <ul id="task-box"></ul>
+            </div>
+        
+        </div>
 
     </div>
 

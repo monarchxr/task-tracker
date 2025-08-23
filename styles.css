@@ -1,0 +1,23 @@
+/* to select element by class, we use */
+/* .<class_name> */
+
+.container{
+    display: flex;
+    /* border: 2px solid lightblue; */
+    justify-content: center;
+    /* justify content moves the flexbox horizontally */
+    /* lets see how we can move vertically as well */
+    align-items: center;
+    height: 100vh; /*this allows the body to take up 100% of the visible screen*/
+    border: 4px solid black;
+    border-radius: 20px;
+}
+
+.list-container{
+
+    border: 2px solid lightgray;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transform: translateY(-40%);
+}

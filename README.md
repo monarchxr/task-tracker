@@ -1,7 +1,7 @@
 # todo-list
 
 Basic features
-[] Add Tasks
-[] Display Tasks
+[Done] Add Tasks
+[Done] Display Tasks
 [] Update Tasks
 [] Delete Tasks
