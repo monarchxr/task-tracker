@@ -11,6 +11,7 @@
     height: 100vh; /*this allows the body to take up 100% of the visible screen*/
     border: 4px solid black;
     border-radius: 20px;
+    background-color: lightcyan;
 }
 
 .list-container{
@@ -20,4 +21,25 @@
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     transform: translateY(-40%);
+    background-color: azure;
+}
+
+.list-container .header{
+
+    display: flex;
+    justify-content: center;
+
+}
+
+.list-container .task-input{
+
+    display: flex;
+    justify-content: center;
+
+}
+
+.list-container .tasks .task-header{
+
+    display: flex;
+    justify-content: center;
 }
