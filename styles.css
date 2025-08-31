@@ -1,45 +1,90 @@
 /* to select element by class, we use */
 /* .<class_name> */
 
-.container{
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+
+body{
+    background: #78c1f3;
+    min-height: 100vh; /*this allows the body to take up 100% of the visible screen*/
     display: flex;
-    /* border: 2px solid lightblue; */
+    align-items: center;
     justify-content: center;
+}
+
+.container{
+    /* display: flex; */
+    /* border: 2px solid lightblue; */
+    /* justify-content: center; */
     /* justify content moves the flexbox horizontally */
     /* lets see how we can move vertically as well */
-    align-items: center;
-    height: 100vh; /*this allows the body to take up 100% of the visible screen*/
-    border: 4px solid black;
-    border-radius: 20px;
-    background-color: lightcyan;
-}
-
-.list-container{
-
-    border: 2px solid lightgray;
+    /* align-items: center; */
+    /* border: 2px solid black; */
+    border-radius: 10px;
+    background: #ffffff;
+    width: 550px;
     padding: 25px;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transform: translateY(-40%);
-    background-color: azure;
 }
 
-.list-container .header{
-
+.task-header{
     display: flex;
     justify-content: center;
-
+    align-items: center;
+    margin-bottom: 15px;
 }
 
-.list-container .task-input{
-
-    display: flex;
-    justify-content: center;
-
+.task-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #edeef0;
+  border-radius: 30px;
+  padding-left: 20px;
+  margin-bottom: 10px;
 }
 
-.list-container .tasks .task-header{
+.task-body input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 5px;
+  font-size: 15px;
+}
 
+.task-body img {
+  cursor: pointer;
+  border-radius: 40px;
+  height: 55px;
+  width: 55px;
+  padding: 15px;
+  background: limegreen;
+}
+
+ul li{
+    list-style: none;
+    font-size: 15px;
+    cursor: pointer;
+    padding: 3px;
+}
+
+li{
     display: flex;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+h5{
+    text-align: center;
+    margin-bottom: 10px;
+    color: green;
 }
