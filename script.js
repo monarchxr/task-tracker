@@ -36,8 +36,8 @@ function readLocalStorage(){
         if(element.item.trim()!== ""){
             let li = document.createElement("li");
             const todoItems = `<div title="Hit Double Click and Complete" ondblclick="Completed(this)">${element.item}</div><div>
-                    <img class="edit todo-controls" onclick="Update(this)" src="/images/edit.png" />
-                    <img class="delete todo-controls" onclick="Delete(this)" src="/images/delete.png" /></div></div>`;
+                    <img class="edit todo-controls" onclick="Update(this)" src="./images/edit.png" />
+                    <img class="delete todo-controls" onclick="Delete(this)" src="./images/delete.png" /></div></div>`;
             li.innerHTML = todoItems;
             taskItems.appendChild(li);  
         }
@@ -83,8 +83,8 @@ function Create(){
 
     let li = document.createElement("li");
     const todoItems = `<div title="Hit Double Click and Complete" ondblclick="Completed(this)">${taskValue.value}</div><div>
-                <img class="edit todo-controls" onclick="Update(this)" src="/images/edit.png" />
-                <img class="delete todo-controls" onclick="Delete(this)" src="/images/delete.png" /></div></div>`;
+                <img class="edit todo-controls" onclick="Update(this)" src="./images/edit.png" />
+                <img class="delete todo-controls" onclick="Delete(this)" src="./images/delete.png" /></div></div>`;
     li.innerHTML = todoItems;
     taskItems.appendChild(li);
         
@@ -122,11 +122,11 @@ function Read(){
         let li = document.createElement("li");
         let style = "";
         let checkimg = "";
-        let editbtn = `<img class="edit todo-controls" onclick="Update(this) src="/images/edit.png" />`; 
+        let editbtn = `<img class="edit todo-controls" onclick="Update(this) src="./images/edit.png" />`; 
         
         if(element.status){
             style = "style='text-decoration: line-through'";
-            checkimg = `img class="todo-controls" src="/images/check.png" />`;
+            checkimg = `img class="todo-controls" src="./images/check.png" />`;
             editbtn = "";
         }
     const todoItems = `
@@ -135,7 +135,7 @@ function Read(){
                 </div>
                 <div>
                     ${editbtn}
-                    <img class="delete todo-controls" onclick="Delete(this)" src="/images/delete.png" />
+                    <img class="delete todo-controls" onclick="Delete(this)" src="./images/delete.png" />
                 </div>
             `;
 
@@ -154,7 +154,7 @@ function Update(e){
             updateIndex = [...taskItems.children].indexOf(e.closest("li"));
             isUpdating = true;
 
-            add.setAttribute("src", "/images/refresh.png");
+            add.setAttribute("src", "./images/refresh.png");
             taskValue.focus();
     }
 }
@@ -187,8 +187,8 @@ function UpdateOnSelection(){
     updateIndex = null;
     isUpdating = false;
 
-    add.setAttribute("src", "/images/add.png");
-    showAlert("Task updated successfully!");
+    add.setAttribute("src", "./images/add.png");
+    showAlert("Task updated successfully!", 2000);
 }
 
 function Delete(e){
@@ -223,7 +223,7 @@ function Completed(e){
         div.style.textDecoration = "line-through";
 
         const img = document.createElement("img");
-        img.src = "/images/check.png";
+        img.src = "./images/check.png";
         img.className = "todo-controls";
         div.appendChild(img);
 
