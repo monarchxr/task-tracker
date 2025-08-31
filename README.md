@@ -1,8 +1,8 @@
 # task-tracker
 
-A basic task tracker website built using HTML, CSS and JavaScript.\
+A basic task tracker website built using HTML, CSS and JavaScript.
 
-Basic features
+Basic features\
 [Done] Add Tasks\
 [Done] Display Tasks\
 [Done] Update Tasks\
