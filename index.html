@@ -3,38 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Do List</title>
+    <title>Task Tracker</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     
     <div class="container">
         
-        <div class="list-container">
-            
-            <div class="header">
-                <h1>Task Tracker</h1>
-            </div>
-
-        
-            <div class="task-input">
-                <input
-                    id="task-add"
-                    type="text"
-                    placeholder="Start writing and press enter to create task"
-                    required
-                />
-        
-                <button id="input-button" onclick="addTask()">Add</button>
-            </div>
-
-
-            <div class="tasks">
-                <h2 class="task-header">Task List</h2>
-                <ul id="task-box"></ul>
-            </div>
-        
+        <div class="task-header">
+            <h2>Task Tracker</h2>
         </div>
+
+        <div class="task-body">
+            <input
+                type="text"
+                id="task-text"
+                class="task-input"
+                placeholder="Start writing and press enter to create task"
+                maxlength="100"
+                required
+            />
+
+            <img
+                src="images/enter.png"
+                alt="enter"
+                id="CreateClick"
+            />
+        </div>
+        
+        <h5 id="alert"></h5>
+        <ul id="task-items" class="task-items"></ul>
 
     </div>
 
