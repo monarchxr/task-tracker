@@ -28,7 +28,7 @@ function addTask(){
         return;
     }
 
-    createTaskElement(task);
+    createTaskElement({text: task, completed:false});
     showAlert("Task successfully created!", 3000);
     input.value = "";
     saveTasks();
@@ -47,7 +47,7 @@ input.addEventListener("keydown", (e)=>{
 
 });
 
-function createTaskElement(task){
+function createTaskElement(taskObj){
     
     const listItem = document.createElement('li');
     listItem.style.display = "flex";
@@ -55,8 +55,8 @@ function createTaskElement(task){
     listItem.style.alignContent = "center";
     
     const tasktext = document.createElement("span");
-    tasktext.textContent = task;
-    listItem.appendChild(tasktext);
+    tasktext.textContent = taskObj.text;
+    
 
     const btnbox = document.createElement("div");
 
@@ -68,11 +68,15 @@ function createTaskElement(task){
     delbtn.src = './images/delete.png';
     delbtn.style.marginLeft = "4px"
 
-    btnbox.appendChild(doneBtn);
+    if(!taskObj.completed){
+        btnbox.appendChild(doneBtn);
+    }else{
+        tasktext.style.textDecoration = "line-through";
+    }
+
     btnbox.appendChild(delbtn);
-
+    listItem.appendChild(tasktext);
     listItem.appendChild(btnbox);
-
     listBox.appendChild(listItem);
 
     doneBtn.addEventListener('click', function(){
@@ -99,7 +103,18 @@ function saveTasks(){
     
     let tasks = [];
     listBox.querySelectorAll('li').forEach(function(item){
-        tasks.push(item.textContent.trim());
+        
+        const tasktext = item.querySelector("span");
+        const btnbox = item.querySelector("div");
+        const doneBtn = btnbox.querySelector("img");
+        const completed = tasktext.style.textDecoration === "line-through";
+        
+        
+        tasks.push({
+            text: tasktext.textContent.trim(),
+            completed: completed
+        });
+
     });
 
     sessionStorage.setItem('tasks', JSON.stringify(tasks));
@@ -109,7 +124,7 @@ function loadTasks(){
 
     const tasks = JSON.parse(sessionStorage.getItem('tasks')) || [];
 
-    tasks.forEach(createTaskElement);
+    tasks.forEach(taskObj => createTaskElement(taskObj));
 }
 
 function deleteList(){
