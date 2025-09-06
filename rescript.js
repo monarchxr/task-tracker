@@ -102,12 +102,12 @@ function saveTasks(){
         tasks.push(item.textContent.trim());
     });
 
-    localStorage.setItem('tasks', JSON.stringify(tasks));
+    sessionStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
 function loadTasks(){
 
-    const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    const tasks = JSON.parse(sessionStorage.getItem('tasks')) || [];
 
     tasks.forEach(createTaskElement);
 }
@@ -115,7 +115,7 @@ function loadTasks(){
 function deleteList(){
 
     if(confirm("Are you sure you want to delete the whole list?")){
-        localStorage.removeItem("tasks");
+        sessionStorage.removeItem("tasks");
     }
 
     listBox.innerHTML = "";
